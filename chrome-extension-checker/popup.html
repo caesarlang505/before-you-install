@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Before You Install</title>
+    <link rel="stylesheet" href="popup.css">
+  </head>
+  <body>
+    <main class="shell">
+      <header class="masthead">
+        <div class="mark" aria-hidden="true">B<span>.</span></div>
+        <div class="masthead-copy">
+          <span class="eyebrow">Extension check</span>
+          <h1>Before You Install</h1>
+        </div>
+      </header>
+
+      <section class="intro" aria-labelledby="intro-title">
+        <p class="step">01 / CHECK THE LINK</p>
+        <h2 id="intro-title">Know what you're adding to Chrome.</h2>
+        <p class="intro-copy">Paste a Chrome Web Store link, or open a listing and click this icon.</p>
+      </section>
+
+      <form id="check-form" novalidate>
+        <label for="store-url">Chrome Web Store link</label>
+        <input id="store-url" type="url" inputmode="url" autocomplete="off" spellcheck="false" placeholder="https://chromewebstore.google.com/detail/…" aria-describedby="url-help" required>
+        <p id="url-help" class="help">The check runs before you install the extension.</p>
+        <button id="check-button" type="submit"><span>Check extension</span><span aria-hidden="true">↗</span></button>
+      </form>
+
+      <section class="status" aria-live="polite" aria-atomic="true">
+        <span class="status-dot" id="status-dot" aria-hidden="true"></span>
+        <p id="status-text">Ready for a Store link.</p>
+      </section>
+
+      <section id="report" class="report" hidden aria-labelledby="report-title">
+        <div class="section-topline"><span>02 / THE RESULT</span><span id="report-id"></span></div>
+        <h2 id="report-title">What we found</h2>
+        <p id="report-summary" class="report-summary"></p>
+        <ul id="findings" class="findings"></ul>
+        <div id="limits" class="limits" hidden></div>
+        <a id="full-report" href="http://127.0.0.1:8787/" target="_blank" rel="noopener">Open the full report ↗</a>
+      </section>
+
+      <footer>Evidence first. No scan can prove an extension is completely safe.</footer>
+    </main>
+    <script src="popup.js" defer></script>
+  </body>
+</html>

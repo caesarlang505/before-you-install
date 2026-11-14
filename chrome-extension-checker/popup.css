@@ -1,0 +1,86 @@
+:root {
+  color-scheme: dark;
+  --ink: #f3f4f0;
+  --muted: #a5aca9;
+  --ground: #101a19;
+  --panel: #182522;
+  --line: #344740;
+  --accent: #bdff78;
+  --warn: #ffbe86;
+  font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+* { box-sizing: border-box; }
+
+html, body { margin: 0; width: 390px; min-width: 390px; }
+
+body {
+  color: var(--ink);
+  background: radial-gradient(circle at 105% -10%, #2b473a 0, transparent 36%), var(--ground);
+}
+
+.shell { padding: 22px; }
+
+.masthead { display: flex; align-items: center; gap: 11px; }
+.mark {
+  display: grid;
+  place-items: center;
+  width: 39px;
+  height: 39px;
+  border: 1px solid var(--accent);
+  border-radius: 11px;
+  color: var(--accent);
+  font-size: 22px;
+  font-weight: 800;
+  letter-spacing: -.1em;
+}
+.mark span { color: var(--ink); }
+.masthead-copy { display: flex; flex-direction: column; gap: 2px; }
+.eyebrow, .step, .section-topline, footer { text-transform: uppercase; letter-spacing: .15em; }
+.eyebrow { color: var(--accent); font-size: 9px; font-weight: 700; }
+h1 { margin: 0; font-size: 15px; font-weight: 720; letter-spacing: -.02em; }
+
+.intro { margin: 34px 0 28px; }
+.step { margin: 0 0 10px; color: var(--accent); font-size: 10px; font-weight: 700; }
+h2 { margin: 0; font-size: 27px; line-height: 1.08; letter-spacing: -.055em; max-width: 315px; }
+.intro-copy { margin: 13px 0 0; color: var(--muted); font-size: 13px; line-height: 1.5; }
+
+label { display: block; margin-bottom: 8px; font-size: 11px; font-weight: 700; }
+input {
+  width: 100%; height: 43px; padding: 0 11px; border: 1px solid var(--line); border-radius: 8px;
+  outline: none; color: var(--ink); background: var(--panel); font: inherit; font-size: 11px;
+}
+input::placeholder { color: #7e8c85; }
+input:focus { border-color: var(--accent); box-shadow: 0 0 0 2px #bdff7830; }
+.help { margin: 7px 0 13px; color: var(--muted); font-size: 10px; }
+button {
+  display: flex; justify-content: space-between; align-items: center; width: 100%; height: 46px; padding: 0 15px;
+  border: 0; border-radius: 8px; color: #17200e; background: var(--accent); font: inherit; font-size: 13px; font-weight: 800;
+  cursor: pointer; transition: transform .15s ease, filter .15s ease;
+}
+button:hover { filter: brightness(1.08); transform: translateY(-1px); }
+button:focus-visible { outline: 2px solid white; outline-offset: 3px; }
+button:disabled { cursor: wait; opacity: .7; transform: none; }
+button span:last-child { font-size: 18px; font-weight: 400; }
+
+.status { display: flex; align-items: flex-start; gap: 9px; margin: 18px 0 0; min-height: 30px; }
+.status-dot { flex: 0 0 7px; height: 7px; margin-top: 4px; border-radius: 50%; background: var(--accent); }
+.status[data-tone="error"] .status-dot { background: var(--warn); }
+.status[data-tone="busy"] .status-dot { animation: pulse 1s infinite alternate; }
+.status p { margin: 0; color: var(--muted); font-size: 11px; line-height: 1.35; }
+.status[data-tone="error"] p { color: var(--warn); }
+
+.report { margin-top: 16px; padding: 17px 0 0; border-top: 1px solid var(--line); }
+.section-topline { display: flex; justify-content: space-between; color: var(--accent); font-size: 9px; font-weight: 700; }
+.report h2 { margin: 10px 0 8px; font-size: 22px; }
+.report-summary { color: var(--ink); font-size: 12px; line-height: 1.5; }
+.findings { display: grid; gap: 9px; padding: 0; list-style: none; }
+.finding { padding: 11px; border: 1px solid var(--line); border-radius: 8px; background: var(--panel); }
+.finding strong { display: block; margin-bottom: 4px; font-size: 11px; }
+.finding p { margin: 0; color: var(--muted); font-size: 10px; line-height: 1.45; }
+.finding a { display: inline-block; margin-top: 6px; color: var(--accent); font-size: 10px; }
+.limits { padding: 10px; border-left: 2px solid var(--warn); color: var(--muted); font-size: 10px; line-height: 1.45; }
+footer { margin-top: 24px; padding-top: 13px; border-top: 1px solid var(--line); color: #819087; font-size: 8px; line-height: 1.5; }
+
+@keyframes pulse { to { opacity: .25; } }
+@media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation-duration: .01ms !important; transition-duration: .01ms !important; } }
