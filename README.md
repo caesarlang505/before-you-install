@@ -17,6 +17,8 @@ Recorded public demo: https://before-you-install-demo.caesarlang505.chatgpt.site
 
 In a real Google Translate test, the full report took about 63 seconds. Daytona could not connect directly to the Store, so the app downloaded the official Store package, verified its extension ID from its public key, and loaded it unpacked in Chrome inside Daytona. The browser used a synthetic page. This differs from normal Store installation and does not verify the package's cryptographic signature independently. See the report limitations before interpreting a result.
 
+For that recorded test, the assessment says **Pause before installing. Review the access it asks for.** Its content script matches all URLs. That is broad access, not evidence that Google Translate misused it. The test ran for 20 seconds on a synthetic page, so the assessment is a prompt to review the scope rather than a malware verdict.
+
 **This is an investigation aid, not proof of safety.** The short test does not cover every website, logins, delayed behavior, future updates, or all background network traffic. A Chrome warning about the unpacked source is not itself a malware finding.
 
 ## Run locally
