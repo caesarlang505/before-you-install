@@ -26,6 +26,13 @@ function setStatus(message, tone = 'idle') {
 function showReport(data) {
   report.hidden = false;
   reportId.textContent = data.extensionId ?? '';
+  const assessment = document.querySelector('#assessment');
+  assessment.hidden = !data.assessment;
+  if (data.assessment) {
+    assessment.dataset.level = data.assessment.level || 'unknown';
+    document.querySelector('#assessment-answer').textContent = data.assessment.answer || '';
+    document.querySelector('#assessment-reason').textContent = data.assessment.reason || '';
+  }
   reportSummary.textContent = data.summary || 'The check finished without a summary.';
   chrome.storage.local.get('currentCheck').then(({currentCheck})=>{if(currentCheck?.jobId)document.querySelector('#full-report').href=`http://127.0.0.1:8787/?job=${encodeURIComponent(currentCheck.jobId)}`;});
   findings.replaceChildren();

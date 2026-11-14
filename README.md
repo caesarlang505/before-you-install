@@ -2,7 +2,11 @@
 
 A Chrome extension that helps people investigate another Chrome Web Store extension before installing it. It shows requested permissions, a short isolated browser test, relevant outside sources, and an AI explanation with links and limitations.
 
+The report now gives a plain **Should I use it?** assessment. It says **Cannot tell yet** when installation fails, **Pause before installing** when the extension requests sensitive permissions or access to many sites, and **No clear warning signs in this check; use with caution** otherwise. This assessment is computed from the evidence already collected, so it does not make another sponsor API or model call. It is a limited screening result, not a security guarantee.
+
 Built for Tokyo Agent Forge, 14 November 2026.
+
+Recorded public demo: https://before-you-install-demo.caesarlang505.chatgpt.site
 
 ## Demo
 
